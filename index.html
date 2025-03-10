@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aman Kushwaha</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="sidebar">
+    <header>
         <h1>Aman Kushwaha</h1>
-        <p class="subtitle">Graduate Student</p>
+        <button id="menu-toggle">☰ Menu</button>
+    </header>
+
+    <div class="sidebar">
         <nav>
             <a href="#about">About</a>
             <a href="#education">Education</a>
@@ -18,29 +22,40 @@
             <a href="#contact">Contact</a>
         </nav>
     </div>
+
     <div class="content">
         <section id="about">
             <h2>About Me</h2>
             <p>I am a final-year M.Sc. Mathematics student at the University of Delhi.</p>
         </section>
+
         <section id="education">
             <h2>Education</h2>
-            <p><strong>M.Sc. in Mathematics</strong>, Department of Mathematics, University of Delhi (2023–2025, expected)</p>
-            <p><strong>B.Sc. (Honours) in Mathematics</strong>, Sri Venkateswara College, University of Delhi (2020–2023), with a Minor in Economics (four semesters of coursework)</p>
+            <ul>
+                <li><strong>M.Sc. in Mathematics</strong>, Department of Mathematics, University of Delhi (2023–2025, expected)</li>
+                <li><strong>B.Sc. (Honours) in Mathematics</strong>, Sri Venkateswara College, University of Delhi (2020–2023)</li>
+                <ul>
+                    <li>Minor in Economics (four semesters of coursework)</li>
+                </ul>
+            </ul>
         </section>
+
         <section id="research">
             <h2>Research Interests</h2>
             <p>My research focuses on investigating combinatorial and probabilistic properties of Erdős matrices, a class of bistochastic matrices that saturate the Marcus–Ree inequality.</p>
         </section>
+
         <section id="publications">
             <h2>Publications</h2>
             <p>Coming soon...</p>
         </section>
+
         <section id="contact">
             <h2>Contact</h2>
             <p>Email: aman_7778@maths.du.ac.in</p>
         </section>
     </div>
+
     <footer>
         <p>&copy; 2025 Aman Kushwaha</p>
     </footer>
