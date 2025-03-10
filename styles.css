@@ -155,8 +155,3 @@ body {
 #go-to-top:hover {
     background: #5A4747;
 }
-
-/* Fix Vertical Bars in Dark Mode */
-.dark-mode .vertical-bar {
-    background-color: #FFFFFF; /* Light color for visibility */
-}
