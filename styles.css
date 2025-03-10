@@ -102,6 +102,10 @@ body {
     color: #FFFFFF;
 }
 
+.dark-mode h2 {
+    border-left: 4px solid #FFFFFF;
+}
+
 /* Dark Mode Links */
 .dark-mode a {
     color: #E0E0E0;
