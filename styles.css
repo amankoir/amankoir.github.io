@@ -6,63 +6,75 @@ body {
     background-color: #f4f1e8; /* Warm, classic background */
     color: #3a3a3a;
     display: flex;
+    flex-direction: column;
 }
 
-/* Sidebar Styling */
+/* Header */
+header {
+    background: #5a4b3b;
+    color: #f4f1ea;
+    text-align: center;
+    padding: 15px;
+    font-size: 1.5em;
+    position: relative;
+}
+
+#menu-toggle {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #f4f1ea;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Sidebar */
 .sidebar {
     width: 260px;
     height: 100vh;
     background: #5a4b3b;
-    padding: 40px 20px;
-    color: #f4f1ea;
     position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    top: 0;
+    left: -260px; /* Hidden by default */
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
     box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
 }
 
-.sidebar h1 {
-    font-size: 1.8em;
-    margin-bottom: 5px;
-    color: #fff;
-    text-align: center;
-}
-
-.subtitle {
-    font-size: 1.1em;
-    color: #ddd;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-nav {
+.sidebar nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 }
 
-nav a {
+.sidebar nav a {
     text-decoration: none;
     color: #f4f1ea;
-    font-size: 1.1em;
+    font-size: 1.2em;
     padding: 10px;
     width: 100%;
     text-align: center;
     transition: 0.3s;
 }
 
-nav a:hover {
+.sidebar nav a:hover {
     background: rgba(255, 221, 179, 0.3);
     color: #ffddb3;
 }
 
-/* Main Content */
+/* Show sidebar when open */
+.sidebar.open {
+    left: 0;
+}
+
+/* Content */
 .content {
-    margin-left: 280px;
-    padding: 40px;
+    margin: 40px auto;
     max-width: 800px;
+    padding: 20px;
 }
 
 h2 {
@@ -71,16 +83,22 @@ h2 {
     color: #4a3f35;
 }
 
-section {
-    margin-bottom: 40px;
-    padding: 10px;
-    border-left: 3px solid #b08968; /* Subtle left border */
+/* Education Formatting */
+ul {
+    padding-left: 20px;
+}
+
+ul ul {
+    padding-left: 20px;
+    font-size: 0.9em;
+    color: #555;
 }
 
 /* Footer */
 footer {
-    margin-left: 280px;
-    padding: 20px;
+    text-align: center;
+    padding: 10px;
     font-size: 0.9em;
     color: #555;
+    margin-top: 20px;
 }
