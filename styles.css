@@ -221,3 +221,8 @@ input:checked + .slider:before {
 html {
     scroll-behavior: smooth;
 }
+
+
+.dark-mode mjx-container {
+    color: white !important; /* Makes MathJax text white */
+}
