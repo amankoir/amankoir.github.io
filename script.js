@@ -1,56 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.getElementById("dark-mode-toggle");
+    const toggleSwitch = document.getElementById("dark-mode-toggle");
     const body = document.body;
     const goToTopButton = document.getElementById("go-to-top");
 
-    // Apply dark mode if previously enabled
+    // Ensure localStorage saves dark mode preference
     if (localStorage.getItem("dark-mode") === "enabled") {
         body.classList.add("dark-mode");
-        toggleButton.textContent = "Light Mode";
+        toggleSwitch.checked = true; // Ensure switch position matches state
     }
 
-    // Toggle dark mode
-    toggleButton.addEventListener("click", function () {
-        body.classList.toggle("dark-mode");
-
-        if (body.classList.contains("dark-mode")) {
+    // Toggle dark mode with switch
+    toggleSwitch.addEventListener("change", function () {
+        if (toggleSwitch.checked) {
+            body.classList.add("dark-mode");
             localStorage.setItem("dark-mode", "enabled");
-            toggleButton.textContent = "Light Mode";
         } else {
+            body.classList.remove("dark-mode");
             localStorage.setItem("dark-mode", "disabled");
-            toggleButton.textContent = "Dark Mode";
         }
     });
+});
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
-        });
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    const goToTopButton = document.getElementById("go-to-top");
 
-    // Show "Go to Top" button when scrolling down
+    // Show button when scrolling down
     window.addEventListener("scroll", function () {
-        if (window.scrollY > 300) {
+        if (window.scrollY > 300) {  // Show only after scrolling 300px
             goToTopButton.classList.add("visible");
         } else {
             goToTopButton.classList.remove("visible");
         }
-    });
-
-    // Smooth scroll to top
-    goToTopButton.addEventListener("click", function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
     });
 });
