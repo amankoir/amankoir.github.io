@@ -1,104 +1,157 @@
-/* Global Styling */
+/* General styles */
 body {
-    font-family: Georgia, serif;
+    font-family: "Georgia", serif;
+    background-color: #F4F1EB; /* Soft ivory background */
+    color: #3A2F2F;
     margin: 0;
-    padding: 0;
-    background-color: #f4f1e8; /* Warm, classic background */
-    color: #3a3a3a;
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
+    line-height: 1.7;
+}
+
+/* Centering content */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 10px;
 }
 
 /* Header */
 header {
-    background: #5a4b3b;
-    color: #f4f1ea;
     text-align: center;
-    padding: 15px;
-    font-size: 1.5em;
-    position: relative;
+    margin-bottom: 30px;
 }
 
-#menu-toggle {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: #f4f1ea;
-    font-size: 1.5em;
-    cursor: pointer;
+header h1 {
+    font-size: 2.3em;
+    margin: 0;
+    color: #3A2F2F;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 260px;
-    height: 100vh;
-    background: #5a4b3b;
-    position: fixed;
-    top: 0;
-    left: -260px; /* Hidden by default */
-    padding-top: 60px;
-    transition: left 0.3s ease-in-out;
-    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+.subtitle {
+    font-size: 1.1em;
+    color: #5A4949;
 }
 
-.sidebar nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Navigation */
+nav {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.sidebar nav a {
+nav a {
     text-decoration: none;
-    color: #f4f1ea;
-    font-size: 1.2em;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
+    color: #3A2F2F;
+    margin: 0 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
     transition: 0.3s;
 }
 
-.sidebar nav a:hover {
-    background: rgba(255, 221, 179, 0.3);
-    color: #ffddb3;
+nav a:hover {
+    border-bottom: 2px solid #3A2F2F;
 }
 
-/* Show sidebar when open */
-.sidebar.open {
-    left: 0;
+/* Sections */
+main {
+    padding: 10px;
 }
 
-/* Content */
-.content {
-    margin: 40px auto;
-    max-width: 800px;
-    padding: 20px;
+section {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #CBBFB2;
 }
 
 h2 {
-    border-bottom: 2px solid #b08968;
-    padding-bottom: 5px;
-    color: #4a3f35;
-}
-
-/* Education Formatting */
-ul {
-    padding-left: 20px;
-}
-
-ul ul {
-    padding-left: 20px;
-    font-size: 0.9em;
-    color: #555;
+    font-size: 1.5em;
+    color: #3A2F2F;
+    border-left: 4px solid #3A2F2F;
+    padding-left: 10px;
 }
 
 /* Footer */
 footer {
     text-align: center;
+    margin-top: 20px;
     padding: 10px;
     font-size: 0.9em;
-    color: #555;
-    margin-top: 20px;
+    color: #5A4949;
+}
+
+
+/* Default Light Mode */
+body {
+    background-color: #F5F1E9; /* Warm Beige */
+    color: #2C2C2C;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #000000; /* Pure Black */
+    color: #E0E0E0;
+}
+
+/* Fix Headings & Text in Dark Mode */
+.dark-mode h1, 
+.dark-mode h2, 
+.dark-mode h3, 
+.dark-mode strong, 
+.dark-mode .subtitle { /* Graduate Student text */
+    color: #FFFFFF;
+}
+
+/* Dark Mode Links */
+.dark-mode a {
+    color: #E0E0E0;
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: 2px solid #3A2F2F;
+    padding: 5px 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#dark-mode-toggle:hover {
+    background: #3A2F2F;
+    color: white;
+}
+
+/* Dark Mode Button Style */
+.dark-mode #dark-mode-toggle {
+    border-color: #E0E0E0;
+    color: #E0E0E0;
+}
+
+/* "Go to Top" Button */
+#go-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #3A2F2F;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#go-to-top.visible {
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+#go-to-top:hover {
+    background: #5A4747;
 }
