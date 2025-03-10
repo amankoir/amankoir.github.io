@@ -111,29 +111,7 @@ body {
     color: #E0E0E0;
 }
 
-/* Dark Mode Toggle Button */
-#dark-mode-toggle {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: 2px solid #3A2F2F;
-    padding: 5px 10px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: 0.3s;
-}
 
-#dark-mode-toggle:hover {
-    background: #3A2F2F;
-    color: white;
-}
-
-/* Dark Mode Button Style */
-.dark-mode #dark-mode-toggle {
-    border-color: #E0E0E0;
-    color: #E0E0E0;
-}
 
 /* "Go to Top" Button */
 #go-to-top {
@@ -159,3 +137,72 @@ body {
 #go-to-top:hover {
     background: #5A4747;
 }
+
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Dark Mode Styles */
+.dark-mode .slider {
+    background-color: #555;
+}
+
+.dark-mode input:checked + .slider {
+    background-color: #FFA500;
+}
+
+/* Fix footer color in dark mode */
+.dark-mode footer {
+    color: #FFFFFF;  /* Light text for visibility */
+}
+
+/* Align Dark Mode text and toggle switch on the same line */
+.dark-mode-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust spacing between text and switch */
+}
+
