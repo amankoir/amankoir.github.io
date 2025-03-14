@@ -228,16 +228,19 @@ html {
 }
 
 
-.cv-link {
+.cv-button {
     display: inline-block;
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #333;
+    background: none;
+    border: 1px solid #555;
     border-radius: 5px;
-    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.cv-link:hover {
-    background-color: #0056b3;
+.cv-button:hover {
+    background: #555;
+    color: white;
 }
